@@ -152,8 +152,15 @@
         <div class="row">
             <div class="col-md-4">
                 <h3>@lang('Need help?')</h3>
-                <a href="tel://004542344599" id="phone">{{ $_setting->phone }}</a>
-                <a href="mailto:help@citytours.com" id="email_footer">{{ $_setting->email }}</a>
+                @php
+                    $phones = explode(',', $_setting->phone);
+                @endphp
+
+                    @foreach($phones as $phone)
+                        <a href="tel:{{ $phone }}" id="phone">{{ $phone }}</a>
+                    @endforeach
+{{--                <a href="tel:{{ $_setting->phone }}" id="phone">{{ $_setting->phone }}</a>--}}
+                <a href="mailto:{{ $_setting->email }}" id="email_footer">{{ $_setting->email }}</a>
             </div>
             <div class="col-md-3">
                 <h3>@lang('About')</h3>
