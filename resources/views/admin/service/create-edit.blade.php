@@ -87,7 +87,7 @@
                                                     <label for="title" class=" form-control-label">Servis Başlığı</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="title" name="title[{{$language->locale}}]" value="{{ isset($service) ? $service->getTranslations()['title'][$language->locale] : old('title['.$language->locale.']') }}" placeholder="" class="form-control slug-source">
+                                                    <input type="text" id="title" name="title[{{$language->locale}}]" value="{{ isset($service) ? $service->getTranslations()['title'][$language->locale] ?? '' : old('title['.$language->locale.']') }}" placeholder="" class="form-control slug-source">
                                                     @error('title')
                                                     <span class="help-block text-danger">{{ $message }}</span>
                                                     @enderror
@@ -98,7 +98,7 @@
                                                     <label for="slug" class=" form-control-label">Servis URL</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="slug" name="slug[{{$language->locale}}]" value="{{ isset($service) ? $service->getTranslations()['slug'][$language->locale] : old('slug['.$language->locale.']') }}" placeholder="" class="form-control  slug-target form-control-plaintext">
+                                                    <input type="text" id="slug" name="slug[{{$language->locale}}]" value="{{ isset($service) ? $service->getTranslations()['slug'][$language->locale] ?? '' : old('slug['.$language->locale.']') }}" placeholder="" class="form-control  slug-target form-control-plaintext">
                                                     @error('slug')
                                                     <span class="help-block text-danger">{{ $message }}</span>
                                                     @enderror
@@ -109,7 +109,7 @@
                                                     <label for="banner_title" class=" form-control-label">Banner Başlığı</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="banner_title" name="banner_title[{{$language->locale}}]" value="{{ isset($service) ? $service->getTranslations()['banner_title'][$language->locale] : old('banner_title['.$language->locale.']') }}" placeholder="" class="form-control">
+                                                    <input type="text" id="banner_title" name="banner_title[{{$language->locale}}]" value="{{ isset($service) ? $service->getTranslations()['banner_title'][$language->locale] ?? '' : old('banner_title['.$language->locale.']') }}" placeholder="" class="form-control">
                                                     @error('banner_title')
                                                     <span class="help-block text-danger">{{ $message }}</span>
                                                     @enderror
@@ -120,7 +120,7 @@
                                                     <label for="banner_text" class=" form-control-label">Banner Açıklaması</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="banner_text" name="banner_text[{{$language->locale}}]" value="{{ isset($service) ? $service->getTranslations()['banner_text'][$language->locale] : old('banner_text['.$language->locale.']') }}" placeholder="" class="form-control">
+                                                    <input type="text" id="banner_text" name="banner_text[{{$language->locale}}]" value="{{ isset($service) ? $service->getTranslations()['banner_text'][$language->locale] ?? '' : old('banner_text['.$language->locale.']') }}" placeholder="" class="form-control">
                                                     @error('banner_text')
                                                     <span class="help-block text-danger">{{ $message }}</span>
                                                     @enderror
@@ -131,7 +131,7 @@
                                                     <label for="description" class=" form-control-label">Servis Kısa Açıklaması</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="description" name="description[{{$language->locale}}]" value="{{ isset($service) ? $service->getTranslations()['description'][$language->locale] : old('description['.$language->locale.']') }}" placeholder="" class="form-control">
+                                                    <input type="text" id="description" name="description[{{$language->locale}}]" value="{{ isset($service) ? $service->getTranslations()['description'][$language->locale] ?? '' : old('description['.$language->locale.']') }}" placeholder="" class="form-control">
                                                     @error('description')
                                                     <span class="help-block text-danger">{{ $message }}</span>
                                                     @enderror
@@ -142,7 +142,7 @@
                                                     <label for="content" class=" form-control-label">Servis Açıklaması</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <textarea name="content[{{ $language->locale }}]"  class="form-control ckeditor1" rows="15">{!!  isset($service) ? $service->getTranslations()['content'][$language->locale] : old('content['.$language->locale.']')  !!}</textarea>
+                                                    <textarea name="content[{{ $language->locale }}]"  class="form-control ckeditor1" rows="15">{!!  isset($service) ? $service->getTranslations()['content'][$language->locale] ?? '' : old('content['.$language->locale.']')  !!}</textarea>
                                                     @error('content')
                                                     <span class="help-block text-danger">{{ $message }}</span>
                                                     @enderror
@@ -155,7 +155,7 @@
                                                     <label for="meta_title" class=" form-control-label">SEO Meta Title</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="meta_title" name="meta_title[{{$language->locale}}]" value="{{ isset($service) ? $service->getTranslations()['meta_title'][$language->locale] : old('meta_title['.$language->locale.']') }}" placeholder="" class="form-control">
+                                                    <input type="text" id="meta_title" name="meta_title[{{$language->locale}}]" value="{{ isset($service) ? $service->getTranslations()['meta_title'][$language->locale] ?? '' : old('meta_title['.$language->locale.']') }}" placeholder="" class="form-control">
                                                     @error('meta_title['.$language->locale.']')
                                                     <span class="help-block text-danger">{{ $message }}</span>
                                                     @enderror
@@ -166,7 +166,7 @@
                                                     <label for="meta_description" class=" form-control-label">SEO Meta Açıklama</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="meta_description" name="meta_description[{{$language->locale}}]" value="{{ isset($service) ? $service->getTranslations()['meta_description'][$language->locale] : old('meta_description['.$language->locale.']') }}" placeholder="" class="form-control">
+                                                    <input type="text" id="meta_description" name="meta_description[{{$language->locale}}]" value="{{ isset($service) ? $service->getTranslations()['meta_description'][$language->locale] ?? '' : old('meta_description['.$language->locale.']') }}" placeholder="" class="form-control">
                                                     @error('meta_description')
                                                     <span class="help-block text-danger">{{ $message }}</span>
                                                     @enderror
@@ -177,7 +177,7 @@
                                                     <label for="meta_keywords" class=" form-control-label">SEO Meta Anahtar Kelime</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="meta_keywords" name="meta_keywords[{{$language->locale}}]" value="{{ isset($service) ? $service->getTranslations()['meta_keywords'][$language->locale] : old('meta_keywords['.$language->locale.']') }}" placeholder="" class="form-control">
+                                                    <input type="text" id="meta_keywords" name="meta_keywords[{{$language->locale}}]" value="{{ isset($service) ? $service->getTranslations()['meta_keywords'][$language->locale] ?? '' : old('meta_keywords['.$language->locale.']') }}" placeholder="" class="form-control">
                                                     @error('meta_keywords')
                                                     <span class="help-block text-danger">{{ $message }}</span>
                                                     @enderror

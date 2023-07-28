@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+ ?? '@extends('admin.layouts.app')
 @section('title', 'Site Ayarları')
 
 @section('content')
@@ -170,7 +170,7 @@
                                             <label for="text-input" class=" form-control-label">Başlık</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <input type="text" id="text-input" name="meta_title[{{$language->locale}}]" value="{{ isset($seo) ? $seo['meta_title'][$language->locale] : old('meta_title['.$language->locale.']')}}" class="form-control">
+                                            <input type="text" id="text-input" name="meta_title[{{$language->locale}}]" value="{{ isset($seo) ? $seo['meta_title'][$language->locale] ?? '' : old('meta_title['.$language->locale.']')}}" class="form-control">
                                             @error('meta_title['.$language->locale.']')
                                                 <small class="form-text text-muted">{{ $message }}</small>
                                             @enderror
@@ -181,7 +181,7 @@
                                             <label for="email-input" class=" form-control-label">Anahtar Kelimeler</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <input type="text" id="email-input" name="meta_keywords[{{$language->locale}}]" value="{{ isset($seo) ? $seo['meta_keywords'][$language->locale] : old('meta_keywords['.$language->locale.']')}}" class="form-control">
+                                            <input type="text" id="email-input" name="meta_keywords[{{$language->locale}}]" value="{{ isset($seo) ? $seo['meta_keywords'][$language->locale] ?? '' : old('meta_keywords['.$language->locale.']')}}" class="form-control">
                                             <small class="help-block form-text">Lütfen kelimeleri , ile ayırınız</small>
                                             @error('meta_keywords['.$language->locale.']')
                                             <small class="form-text text-muted">{{ $message }}</small>
@@ -193,7 +193,7 @@
                                             <label for="textarea-input" class=" form-control-label">Site Açıklaması</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <textarea name="meta_description[{{$language->locale}}]" id="textarea-input" rows="9"  class="form-control">{{ isset($seo) ? $seo['meta_description'][$language->locale] : old('meta_description['.$language->locale.']') }}</textarea>
+                                            <textarea name="meta_description[{{$language->locale}}]" id="textarea-input" rows="9"  class="form-control">{{ isset($seo) ? $seo['meta_description'][$language->locale] ?? '' : old('meta_description['.$language->locale.']') }}</textarea>
                                             @error('meta_description['.$language->locale.']')
                                             <small class="form-text text-muted">{{ $message }}</small>
                                             @enderror

@@ -79,7 +79,7 @@
                                                         </div>
                                                         <div class="col-12 col-md-9">
                                                             <input type="text" id="name" name="name[{{$language->locale}}]"
-                                                                   value="{{ isset($about) ? $about['name'][$language->locale] : old('name['.$language->locale.']') }}"
+                                                                   value="{{ isset($about) ? $about['name'][$language->locale] ?? '' : old('name['.$language->locale.']') }}"
                                                                    placeholder="" class="form-control slug-source">
                                                             @error('name.*')
                                                             <span class="help-block text-danger">{{ $message }}</span>
@@ -92,7 +92,7 @@
                                                         </div>
                                                         <div class="col-12 col-md-9">
                                                             <input type="text" id="slug" name="slug[{{$language->locale}}]"
-                                                                   value="{{ isset($about) ? $about['slug'][$language->locale] : old('slug['.$language->locale.']') }}"
+                                                                   value="{{ isset($about) ? $about['slug'][$language->locale] ?? '' : old('slug['.$language->locale.']') }}"
                                                                    placeholder="" class="form-control slug-target form-control-plaintext">
                                                             @error('slug.*')
                                                             <span class="help-block text-danger">{{ $message }}</span>
@@ -104,7 +104,7 @@
                                                             <label for="banner_title" class=" form-control-label">Banner Alanı Başlık</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="text" id="banner_title" name="banner_title[{{$language->locale}}]" value="{{ isset($about) ? $about['banner_title'][$language->locale] : old('banner_title['.$language->locale.']') }}" placeholder="" class="form-control">
+                                                            <input type="text" id="banner_title" name="banner_title[{{$language->locale}}]" value="{{ isset($about) ? $about['banner_title'][$language->locale] ?? '' : old('banner_title['.$language->locale.']') }}" placeholder="" class="form-control">
                                                             @error('banner_title.*')
                                                             <span class="help-block text-danger">{{ $message }}</span>
                                                             @enderror
@@ -116,7 +116,7 @@
                                                             <label for="banner_text" class=" form-control-label">Banner Alanı Açıklaması</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="text" id="banner_text" name="banner_text[{{$language->locale}}]" value="{{ isset($about) ? $about['banner_text'][$language->locale] : old('banner_text['.$language->locale.']') }}" placeholder="" class="form-control">
+                                                            <input type="text" id="banner_text" name="banner_text[{{$language->locale}}]" value="{{ isset($about) ? $about['banner_text'][$language->locale] ?? '' : old('banner_text['.$language->locale.']') }}" placeholder="" class="form-control">
                                                             @error('banner_text.*')
                                                             <span class="help-block text-danger">{{ $message }}</span>
                                                             @enderror
@@ -128,7 +128,7 @@
                                                             <label for="short_desc" class=" form-control-label">Kısa Açıklama</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="text" id="short_desc" name="short_desc[{{$language->locale}}]" value="{{ isset($about) ? $about['short_desc'][$language->locale] : old('short_desc['.$language->locale.']') }}" placeholder="" class="form-control">
+                                                            <input type="text" id="short_desc" name="short_desc[{{$language->locale}}]" value="{{ isset($about) ? $about['short_desc'][$language->locale] ?? '' : old('short_desc['.$language->locale.']') }}" placeholder="" class="form-control">
                                                             @error('short_desc.*')
                                                             <span class="help-block text-danger">{{ $message }}</span>
                                                             @enderror
@@ -139,7 +139,7 @@
                                                             <label for="premium_text" class=" form-control-label">Premium Alanı Açıklaması</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="text" id="premium_text" name="premium_text[{{$language->locale}}]" value="{{ isset($about) ? $about['premium_text'][$language->locale] : old('premium_text['.$language->locale.']') }}" placeholder="" class="form-control">
+                                                            <input type="text" id="premium_text" name="premium_text[{{$language->locale}}]" value="{{ isset($about) ? $about['premium_text'][$language->locale] ?? '' : old('premium_text['.$language->locale.']') }}" placeholder="" class="form-control">
                                                             @error('premium_text.*')
                                                             <span class="help-block text-danger">{{ $message }}</span>
                                                             @enderror
@@ -150,7 +150,7 @@
                                                             <label for="customer_text" class=" form-control-label">Customer Alanı Açıklaması</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="text" id="customer_text" name="customer_text[{{$language->locale}}]" value="{{ isset($about) ? $about['customer_text'][$language->locale] : old('customer_text['.$language->locale.']') }}" placeholder="" class="form-control">
+                                                            <input type="text" id="customer_text" name="customer_text[{{$language->locale}}]" value="{{ isset($about) ? $about['customer_text'][$language->locale] ?? '' : old('customer_text['.$language->locale.']') }}" placeholder="" class="form-control">
                                                             @error('customer_text.*')
                                                             <span class="help-block text-danger">{{ $message }}</span>
                                                             @enderror
@@ -161,7 +161,7 @@
                                                             <label for="support_text" class=" form-control-label">Support Alanı Açıklaması</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="text" id="support_text" name="support_text[{{$language->locale}}]" value="{{ isset($about) ? $about['support_text'][$language->locale] : old('support_text['.$language->locale.']') }}" placeholder="" class="form-control">
+                                                            <input type="text" id="support_text" name="support_text[{{$language->locale}}]" value="{{ isset($about) ? $about['support_text'][$language->locale] ?? '' : old('support_text['.$language->locale.']') }}" placeholder="" class="form-control">
                                                             @error('support_text.*')
                                                             <span class="help-block text-danger">{{ $message }}</span>
                                                             @enderror
@@ -172,7 +172,7 @@
                                                             <label for="language_text" class=" form-control-label">Dil Alanı Açıklaması</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="text" id="language_text" name="language_text[{{$language->locale}}]" value="{{ isset($about) ? $about['language_text'][$language->locale] : old('language_text['.$language->locale.']') }}" placeholder="" class="form-control">
+                                                            <input type="text" id="language_text" name="language_text[{{$language->locale}}]" value="{{ isset($about) ? $about['language_text'][$language->locale] ?? '' : old('language_text['.$language->locale.']') }}" placeholder="" class="form-control">
                                                             @error('language_text.*')
                                                             <span class="help-block text-danger">{{ $message }}</span>
                                                             @enderror
@@ -183,7 +183,7 @@
                                                             <label for="accessibility_text" class=" form-control-label">Erişilebilirlik Alanı Açıklaması</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="text" id="accessibility_text" name="accessibility_text[{{$language->locale}}]" value="{{ isset($about) ? $about['accessibility_text'][$language->locale] : old('accessibility_text['.$language->locale.']') }}" placeholder="" class="form-control">
+                                                            <input type="text" id="accessibility_text" name="accessibility_text[{{$language->locale}}]" value="{{ isset($about) ? $about['accessibility_text'][$language->locale] ?? '' : old('accessibility_text['.$language->locale.']') }}" placeholder="" class="form-control">
                                                             @error('accessibility_text.*')
                                                             <span class="help-block text-danger">{{ $message }}</span>
                                                             @enderror
@@ -194,7 +194,7 @@
                                                             <label for="pet_allow_text" class=" form-control-label">Evcil Hayvan İzni Alanı Açıklaması</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="text" id="pet_allow_text" name="pet_allow_text[{{$language->locale}}]" value="{{ isset($about) ? $about['pet_allow_text'][$language->locale] : old('pet_allow_text['.$language->locale.']') }}" placeholder="" class="form-control">
+                                                            <input type="text" id="pet_allow_text" name="pet_allow_text[{{$language->locale}}]" value="{{ isset($about) ? $about['pet_allow_text'][$language->locale] ?? '' : old('pet_allow_text['.$language->locale.']') }}" placeholder="" class="form-control">
                                                             @error('pet_allow_text.*')
                                                             <span class="help-block text-danger">{{ $message }}</span>
                                                             @enderror
@@ -206,7 +206,7 @@
                                                         </div>
                                                         <div class="col-12 col-md-9">
                                                             <textarea name="mission[{{$language->locale}}]" class="form-control" id="mission" cols="30"
-                                                                      rows="10">{{ isset($about) ? $about['mission'][$language->locale] : old('mission['.$language->locale.']') }}</textarea>
+                                                                      rows="10">{{ isset($about) ? $about['mission'][$language->locale] ?? '' : old('mission['.$language->locale.']') }}</textarea>
                                                              @error('mission.*')
                                                             <span class="help-block text-danger">{{ $message }}</span>
                                                             @enderror
@@ -218,7 +218,7 @@
                                                         </div>
                                                         <div class="col-12 col-md-9">
                                                             <textarea name="vision[{{$language->locale}}]" class="form-control" id="vision" cols="30"
-                                                                      rows="10">{{ isset($about) ? $about['vision'][$language->locale] : old('vision['.$language->locale.']') }}</textarea>
+                                                                      rows="10">{{ isset($about) ? $about['vision'][$language->locale] ?? '' : old('vision['.$language->locale.']') }}</textarea>
                                                            @error('vision.*')
                                                             <span class="help-block text-danger">{{ $message }}</span>
                                                             @enderror

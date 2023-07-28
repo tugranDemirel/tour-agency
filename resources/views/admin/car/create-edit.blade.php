@@ -144,7 +144,7 @@
                                                     <label for="color" class=" form-control-label">Araç Rengi</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="color" name="color[{{$language->locale}}]" value="{{ isset($car) ? $car->getTranslations()['color'][$language->locale] : old('color['.$language->locale.']') }}" placeholder="" class="form-control">
+                                                    <input type="text" id="color" name="color[{{$language->locale}}]" value="{{ isset($car) ? $car->getTranslations()['color'][$language->locale] ?? '' : old('color['.$language->locale.']') }}" placeholder="" class="form-control">
                                                     @error('color')
                                                     <span class="help-block text-danger">{{ $message }}</span>
                                                     @enderror
@@ -155,7 +155,7 @@
                                                     <label for="editor" class=" form-control-label">Araç Özellikleri</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <textarea name="description[{{ $language->locale }}]"  class="form-control ckeditor1" rows="15">{!!  isset($car) ? $car->getTranslations()['description'][$language->locale] : old('description['.$language->locale.']')  !!}</textarea>
+                                                    <textarea name="description[{{ $language->locale }}]"  class="form-control ckeditor1" rows="15">{!!  isset($car) ? $car->getTranslations()['description'][$language->locale] ?? '' : old('description['.$language->locale.']')  !!}</textarea>
                                                     @error('description')
                                                     <span class="help-block text-danger">{{ $message }}</span>
                                                     @enderror

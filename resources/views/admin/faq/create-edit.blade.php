@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+ ?? '@extends('admin.layouts.app')
 @section('title', isset($faq) ? 'Yorum Düzenle' : 'Yorum Oluştur')
 @section('content')
 
@@ -70,7 +70,7 @@
                                                 <label for="title" class=" form-control-label">Soru Başlığı</label>
                                             </div>
                                             <div class="col-12 col-md-9">
-                                                <input type="text" id="title" name="title[{{$language->locale}}]" value="{{ isset($faq) ? $faq->getTranslations()['title'][$language->locale] : old('title['.$language->locale.']') }}" placeholder="" class="form-control">
+                                                <input type="text" id="title" name="title[{{$language->locale}}]" value="{{ isset($faq) ? $faq->getTranslations()['title'][$language->locale] ?? '' : old('title['.$language->locale.']') }}" placeholder="" class="form-control">
                                                 @error('title')
                                                 <span class="help-block text-danger">{{ $message }}</span>
                                                 @enderror
@@ -81,7 +81,7 @@
                                                 <label for="question" class=" form-control-label">Soru</label>
                                             </div>
                                             <div class="col-12 col-md-9">
-                                                <input type="text" id="question" name="question[{{$language->locale}}]" value="{{ isset($faq) ? $faq->getTranslations()['question'][$language->locale] : old('question['.$language->locale.']') }}" placeholder="" class="form-control">
+                                                <input type="text" id="question" name="question[{{$language->locale}}]" value="{{ isset($faq) ? $faq->getTranslations()['question'][$language->locale] ?? '' : old('question['.$language->locale.']') }}" placeholder="" class="form-control">
                                                 @error('question')
                                                 <span class="help-block text-danger">{{ $message }}</span>
                                                 @enderror
@@ -92,7 +92,7 @@
                                                 <label for="editor" class=" form-control-label">Sorunun Cevabı</label>
                                             </div>
                                             <div class="col-12 col-md-9">
-                                                <textarea name="answer[{{ $language->locale }}]"  class="form-control ckeditor1" rows="15">{!!  isset($faq) ? $faq->getTranslations()['answer'][$language->locale] : old('answer['.$language->locale.']')  !!}</textarea>
+                                                <textarea name="answer[{{ $language->locale }}]"  class="form-control ckeditor1" rows="15">{!!  isset($faq) ? $faq->getTranslations()['answer'][$language->locale] ?? '' : old('answer['.$language->locale.']')  !!}</textarea>
                                                 @error('answer')
                                                 <span class="help-block text-danger">{{ $message }}</span>
                                                 @enderror
