@@ -81,10 +81,10 @@
                                         </div>
                                         <div class="row form-group">
                                             <div class="col col-md-3">
-                                                <label for="banner_title" class=" form-control-label">Banner Başlığı</label>
+                                                <label for="" class=" form-control-label">Banner Başlığı</label>
                                             </div>
                                             <div class="col-12 col-md-9">
-                                                <input type="text" id="banner_title" name="banner_title" value="{{ isset($service) ? $service->getTranslations()['banner_title']['tr'] ?? '' : old('banner_title') }}" placeholder="" class="form-control">
+                                                <input type="text" id="" name="banner_title" value="{{ isset($service) ? $service->getTranslations()['banner_title']['tr'] ?? '' : old('banner_title') }}" class="form-control">
                                                 @error('banner_title')
                                                 <span class="help-block text-danger">{{ $message }}</span>
                                                 @enderror
@@ -186,7 +186,6 @@
         $(document).ready(function(){
             let slugSource = document.querySelectorAll('.slug-source')
             let slugTarget = document.querySelectorAll('.slug-target')
-            console.log(slugSource);
             for (let i = 0; i < slugSource.length; i++){
                 slugSource[i].addEventListener('keyup', function(){
                     let slug = this.value.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'')
