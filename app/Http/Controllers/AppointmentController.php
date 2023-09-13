@@ -99,7 +99,7 @@ class AppointmentController extends Controller
 
         if(!empty($appointment['child_seat']))
         {
-            $data['price'] = $location->price +  5;
+            $data['price'] = $location->price;
             $data['child_seat'] = true;
         }
         else
@@ -123,7 +123,7 @@ class AppointmentController extends Controller
             if (!empty($appointment['round_child_seat']))
             {
                 // round_price = return_price
-                $data['return_price'] = $roundLocation->price + 5;
+                $data['return_price'] = $roundLocation->price;
                 $data['round_child_seat'] = true;
             }
             else

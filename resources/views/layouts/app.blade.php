@@ -89,10 +89,9 @@
 
                 <div class="col-6">
                     @foreach($phones as $phone)
-                        <i class="icon-phone"></i><strong>{{ $phone }}</strong>
+                        <a href="https://wa.me/{{ $phone }}"> <i class="icon-phone"></i><strong>{{ $phone }}</strong></a>
                     @endforeach
                 </div>
-
             </div><!-- End row -->
         </div><!-- End container-->
     </div><!-- End top line-->
@@ -157,7 +156,7 @@
                 @endphp
 
                     @foreach($phones as $phone)
-                        <a href="tel:{{ $phone }}" id="phone">{{ $phone }}</a>
+                        <a href="https://wa.me/{{ $phone }}" id="phone">{{ $phone }}</a>
                     @endforeach
 {{--                <a href="tel:{{ $_setting->phone }}" id="phone">{{ $_setting->phone }}</a>--}}
                 <a href="mailto:{{ $_setting->email }}" id="email_footer">{{ $_setting->email }}</a>

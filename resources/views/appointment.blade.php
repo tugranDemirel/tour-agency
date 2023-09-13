@@ -202,21 +202,6 @@
                                     @endif
                                 </td>
                             </tr>
-                            <tr>
-                                <td>
-                                    @lang('Child Seat')
-                                </td>
-                                <td class="text-end">
-                                    @if(!empty($appointment['round_child_seat']))
-                                        @php $total = 10 @endphp
-                                    @elseif(!empty($appointment['child_seat']))
-                                        @php $total = 5 @endphp
-                                    @else
-                                        @php $total = 0 @endphp
-                                    @endif
-                                    {{ $total }}
-                                </td>
-                            </tr>
                             <tr class="total">
                                 <td>
                                     @lang('Total cost')
@@ -225,15 +210,15 @@
                                     @if(!empty($appointment['roundLocation']->price))
                                         @php $total =  $appointment['roundLocation']->price + $appointment['oneWayLocation']->price @endphp
                                         @if(!empty($appointment['round_child_seat']))
-                                            @php $total = $total + 10 @endphp
+                                            @php $total = $total @endphp
                                         @elseif(!empty($appointment['child_seat']))
-                                            @php $total = $total + 5 @endphp
+                                            @php $total = $total @endphp
                                         @endif
                                         {{ $total }}
                                     @else
                                        @php $total = $appointment['oneWayLocation']->price @endphp
                                             @if(!empty($appointment['child_seat']))
-                                                @php $total = $total + 5 @endphp
+                                                @php $total = $total @endphp
                                             @endif
                                             {{ $total }} {{$_setting->currency ?? '$'}}
                                     @endif

@@ -108,7 +108,7 @@
                                                         </div>
                                                         <div class="col-12 col-md-9">
                                                             <input type="text" id="price_description" name="price_description[{{$language->locale}}]"
-                                                                   value="{{ isset($mainConfig) ? $mainConfig->getTranslations()['price_description'][$language->locale] : old('price_description['.$language->locale.']') }}"
+                                                                   value="{{ isset($mainConfig) ? $mainConfig['price_description'][$language->locale] ?? '' : old('price_description['.$language->locale.']') }} "
                                                                    placeholder="" class="form-control"
                                                             >
                                                             @error('price_description.*')
@@ -121,7 +121,7 @@
                                                             <label for="video_title" class=" form-control-label">Video Başlığı</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="text" id="video_title" name="video_title[{{$language->locale}}]" value="{{ isset($mainConfig) ? $mainConfig->getTranslations()['video_title'][$language->locale] : old('video_title['.$language->locale.']') }}" placeholder="" class="form-control">
+                                                            <input type="text" id="video_title" name="video_title[{{$language->locale}}]" value="{{ isset($mainConfig) ? $mainConfig['video_title'][$language->locale] ?? '' : old('video_title['.$language->locale.']') }}" placeholder="" class="form-control">
                                                             @error('video_title.*')
                                                             <span class="help-block text-danger">{{ $message }}</span>
                                                             @enderror
@@ -132,7 +132,7 @@
                                                             <label for="video_description" class=" form-control-label">Video Açıklaması</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="text" id="video_description" name="video_description[{{$language->locale}}]" value="{{ isset($mainConfig) ? $mainConfig->getTranslations()['video_description'][$language->locale] : old('video_description['.$language->locale.']') }}" placeholder="" class="form-control">
+                                                            <input type="text" id="video_description" name="video_description[{{$language->locale}}]" value="{{ isset($mainConfig) ? $mainConfig['video_description'][$language->locale] ?? '' : old('video_description['.$language->locale.']') }}" placeholder="" class="form-control">
                                                             @error('video_description.*')
                                                             <span class="help-block text-danger">{{ $message }}</span>
                                                             @enderror
@@ -143,7 +143,7 @@
                                                             <label for="premium_text" class=" form-control-label">Premium Alanı Açıklaması</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="text" id="premium_text" name="premium_text[{{$language->locale}}]" value="{{ isset($mainConfig) ? $mainConfig->getTranslations()['premium_text'][$language->locale] : old('premium_text['.$language->locale.']') }}" placeholder="" class="form-control">
+                                                            <input type="text" id="premium_text" name="premium_text[{{$language->locale}}]" value="{{ isset($mainConfig) ? $mainConfig['premium_text'][$language->locale] ?? '' : old('premium_text['.$language->locale.']') }}" placeholder="" class="form-control">
                                                             @error('premium_text.*')
                                                             <span class="help-block text-danger">{{ $message }}</span>
                                                             @enderror
@@ -154,7 +154,7 @@
                                                             <label for="customer_text" class=" form-control-label">Customer Alanı Açıklaması</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="text" id="customer_text" name="customer_text[{{$language->locale}}]" value="{{ isset($mainConfig) ? $mainConfig->getTranslations()['customer_text'][$language->locale] : old('customer_text['.$language->locale.']') }}" placeholder="" class="form-control">
+                                                            <input type="text" id="customer_text" name="customer_text[{{$language->locale}}]" value="{{ isset($mainConfig) ? $mainConfig['customer_text'][$language->locale] ?? '' : old('customer_text['.$language->locale.']') }}" placeholder="" class="form-control">
                                                             @error('customer_text.*')
                                                             <span class="help-block text-danger">{{ $message }}</span>
                                                             @enderror
@@ -165,7 +165,7 @@
                                                             <label for="support_text" class=" form-control-label">Support Alanı Açıklaması</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="text" id="support_text" name="support_text[{{$language->locale}}]" value="{{ isset($mainConfig) ? $mainConfig->getTranslations()['support_text'][$language->locale] : old('support_text['.$language->locale.']') }}" placeholder="" class="form-control">
+                                                            <input type="text" id="support_text" name="support_text[{{$language->locale}}]" value="{{ isset($mainConfig) ? $mainConfig['support_text'][$language->locale] ?? '' : old('support_text['.$language->locale.']') }}" placeholder="" class="form-control">
                                                             @error('support_text.*')
                                                             <span class="help-block text-danger">{{ $message }}</span>
                                                             @enderror
