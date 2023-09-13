@@ -124,8 +124,14 @@
                         <hr>
                         <h4>@lang('Help center') <span><i class="icon-help pull-right"></i></span></h4>
                         <ul id="contact-info">
-                            <li>{{ $_setting->phone }}</li>
-                            <li><a href="mailto:{{ $_setting->email }}" target="_blank">{{ $_setting->email}}</a>
+                            @php
+                                $phones = explode(',', $_setting->phone);
+                            @endphp
+                            @foreach($phones as $phone)
+                                <li><i class="icon-phone"></i><a href="https://wa.me/{{ $phone }}" class="phone">{{ $phone }}</a></li>
+                            @endforeach
+
+                            <li><i class="icon-mail"></i><a href="mailto:{{ $_setting->email }}" target="_blank">{{ $_setting->email}}</a>
                             </li>
                         </ul>
                     </div>

@@ -258,7 +258,7 @@
                                         @if(!empty($appointment['child_seat']))
                                             @php $total = $total + 5 @endphp
                                         @endif
-                                        {{ $total }} {{$_setting->currency ?? '$'}}
+                                        {{ $total }} {{$_setting->currency ?? '€'}}
                                     @endif
 
                                 </td>
@@ -276,7 +276,12 @@
                     <div class="box_style_4">
                         <i class="icon_set_1_icon-57"></i>
                         <h4><span>@lang('Need')</span> @lang('Help')?</h4>
-                        <a href="tel:{{ $_setting->phone }}" class="phone">{{ $_setting->phone }}</a>
+                        @php
+                            $phones = explode(',', $_setting->phone);
+                        @endphp
+                        @foreach($phones as $phone)
+                        <a href="https://wa.me/{{ $phone }}" class="phone">{{ $phone }}</a>
+                        @endforeach
                         <small>@lang('24/7')</small>
                     </div>
                 </aside>

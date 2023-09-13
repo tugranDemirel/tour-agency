@@ -19,5 +19,6 @@ class Setting extends Model
         'address',
         'facebook',
         'instagram',
+        'currency'
     ];
 }

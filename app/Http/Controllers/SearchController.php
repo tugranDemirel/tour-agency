@@ -34,7 +34,7 @@ class SearchController extends Controller
             $cars = $cars->with(['car' => function($query){
                 $query->where('is_active', CarEnum::IS_ACTIVE);
             }])
-                ->orderBy('price', 'desc')
+                ->orderBy('price', 'ASC')
                 ->get();
 
             $childSeat = $request->has('child_seat') && $request->child_seat == 'on' ? true : false;
@@ -83,7 +83,7 @@ class SearchController extends Controller
             $cars = $cars->with(['car' => function($query){
                 $query->where('is_active', CarEnum::IS_ACTIVE);
             }])
-                ->orderBy('price', 'desc')
+                ->orderBy('price', 'ASC')
                 ->get();
 
             $childSeat = $request->has('child_seat') && $request->child_seat == 'on' ? true : false;

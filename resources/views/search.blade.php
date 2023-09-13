@@ -31,7 +31,12 @@
                     <div class="box_style_2 d-none d-sm-block">
                         <i class="icon_set_1_icon-57"></i>
                         <h4><span>@lang('Need')</span> @lang('Help')?</h4>
-                        <a href="tel:{{ $_setting->phone }}" class="phone">{{ $_setting->phone }}</a>
+                        @php
+                            $phones = explode(',', $_setting->phone);
+                        @endphp
+                        @foreach($phones as $phone)
+                            <a href="https://wa.me/{{ $phone }}" class="phone">{{ $phone }}</a>
+                        @endforeach
                         <small>@lang('24/7')</small>
                     </div>
                 </aside>
@@ -94,7 +99,7 @@
                                             </div>
                                             <div class="col-lg-2 col-md-2">
                                                 <div class="price_list">
-                                                    <div><sup>{{ $_setting->currency }}</sup>{{ (isset($childSeat) && $childSeat === true) ? $car->price + 5 : $car->price  }}*<span class="normal_price_list"></span><small>*{{ $car->person_count }} Total number of people</small>
+                                                    <div><sup>{{ $_setting->currency }}</sup>{{ (isset($childSeat) && $childSeat === true) ? $car->price + 5 : $car->price  }} {{$_setting->currency ?? '€'}}<span class="normal_price_list"></span><small>*{{ $car->person_count }} Total number of people</small>
                                                         <p>
 
                                                             <input type="radio" id="oneWay"  class="btn_1" name="one_way_location" class="@error('one_way_location') is-invalid @enderror " value="{{ $car->id }}">
@@ -192,7 +197,7 @@
                                             </div>
                                             <div class="col-lg-2 col-md-2">
                                                 <div class="price_list">
-                                                    <div><sup>{{ $_setting->currency }}</sup>{{ (isset($round_childSeat) && $round_childSeat === true) ? $car->price + 5 : $round->price  }}*<span class="normal_price_list"></span><small>*{{ $round->person_count }} Total number of people</small>
+                                                    <div><sup>{{ $_setting->currency }}</sup>{{ (isset($round_childSeat) && $round_childSeat === true) ? $car->price + 5 : $round->price  }} {{$_setting->currency ?? '€'}}<span class="normal_price_list"></span><small>*{{ $round->person_count }} Total number of people</small>
                                                         <p>
                                                             <input type="radio" id="rounded" class="btn_1" name="round_location" value="{{ $round->id }}">
                                                             @if(isset($round_childSeat) && $round_childSeat === true)

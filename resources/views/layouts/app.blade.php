@@ -193,7 +193,7 @@
                         <li><a href="{{ $_setting->instagram }}" target="_blank"><i class="icon-instagram"></i></a></li>
                     </ul>
 
-                    <p>© Tuğran Demirel</p>
+                    <p>© <a href="tel:+905443380633">Tuğran Demirel</a></p>
                 </div>
             </div>
         </div><!-- End row -->
