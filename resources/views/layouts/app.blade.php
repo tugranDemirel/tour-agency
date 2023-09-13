@@ -200,9 +200,17 @@
     </div><!-- End container -->
     </a>
 </footer><!-- End footer -->
+@php
+    $height= 0;
+@endphp
 @foreach($phones as $phone)
-<div class="whatsapp">
-    <a href="https://wa.me/{{ $phone }}" target="_blank">
+
+<div class="whatsapp"
+    style="margin-bottom: {{ $height += 42 }}px;">
+
+    <a href="https://wa.me/{{ $phone }}"
+
+       target="_blank">
         <img src="{{ asset('images/whatsapp.png') }}" alt=""  width="50">
     </a>
 </div>
