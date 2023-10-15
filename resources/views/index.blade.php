@@ -7,6 +7,19 @@
     @endisset
 @endsection
 @section('filter')
+
+    <div class="row">
+        <div class="col-lg-12" id="" >
+            <img class="img-fluid" src="{{ asset('images/prices.jpg') }}" alt="" style="
+            max-height: 700px;
+            max-width: 100%;
+            width: 100%;
+            display: table;
+            z-index: 99;
+            position: relative;
+    ">
+        </div>
+    </div>
     @include('layouts.filter')
 @endsection
 @section('content')

@@ -65,7 +65,7 @@
             <div class="container-fluid">
                 <ul class="navbar-mobile__list list-unstyled">
                     <li class="has-sub">
-                        <a class="js-arrow">
+                        <a class="js-arrow" href="#">
                             <i class="fas fa-tachometer-alt"></i>Anasayfa</a>
                         <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                             <li>
@@ -265,34 +265,6 @@
                                         <a class="js-acc-btn" href="#">{{ auth()->user()->name }}</a>
                                     </div>
                                     <div class="account-dropdown js-dropdown">
-                                        {{--<div class="info clearfix">
-                                            <div class="image">
-                                                <a href="#">
-                                                    <img src="{{ asset('assets/admin/images/icon/avatar-01.jpg') }}"
-                                                         alt="John Doe"/>
-                                                </a>
-                                            </div>
-                                            <div class="content">
-                                                <h5 class="name">
-                                                    <a href="#">john doe</a>
-                                                </h5>
-                                                <span class="email">johndoe@example.com</span>
-                                            </div>
-                                        </div>--}}
-                                        {{--<div class="account-dropdown__body">
-                                            <div class="account-dropdown__item">
-                                                <a href="#">
-                                                    <i class="zmdi zmdi-account"></i>Account</a>
-                                            </div>
-                                            <div class="account-dropdown__item">
-                                                <a href="#">
-                                                    <i class="zmdi zmdi-settings"></i>Setting</a>
-                                            </div>
-                                            <div class="account-dropdown__item">
-                                                <a href="#">
-                                                    <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                            </div>
-                                        </div>--}}
                                         <div class="account-dropdown__footer">
                                             <a onclick="document.getElementById('logoutForm').submit()">
                                                 <i class="zmdi zmdi-power"></i>Çıkış Yap</a>

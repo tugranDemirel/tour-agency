@@ -101,8 +101,10 @@
                                                 <div class="price_list">
                                                     <div><sup>{{ $_setting->currency }}</sup>{{ (isset($childSeat) && $childSeat === true) ? $car->price + 5 : $car->price  }} {{$_setting->currency ?? '€'}}<span class="normal_price_list"></span><small>*{{ $car->person_count }} Total number of people</small>
                                                         <p>
-
-                                                            <input type="radio" id="oneWay"  class="btn_1" name="one_way_location" class="@error('one_way_location') is-invalid @enderror " value="{{ $car->id }}">
+                                                            <label for="">
+                                                                <input type="radio" id="oneWay"  class="btn_1" name="one_way_location" class="@error('one_way_location') is-invalid @enderror " value="{{ $car->id }}">
+                                                                SELECT
+                                                            </label>
                                                             @if(isset($childSeat) && $childSeat === true)
                                                                 <input type="hidden" name="child_seat" value="1">
                                                             @endif
@@ -199,7 +201,10 @@
                                                 <div class="price_list">
                                                     <div><sup>{{ $_setting->currency }}</sup>{{ (isset($round_childSeat) && $round_childSeat === true) ? $car->price + 5 : $round->price  }} {{$_setting->currency ?? '€'}}<span class="normal_price_list"></span><small>*{{ $round->person_count }} Total number of people</small>
                                                         <p>
-                                                            <input type="radio" id="rounded" class="btn_1" name="round_location" value="{{ $round->id }}">
+                                                            <label for="">
+                                                                <input type="radio" id="rounded" class="btn_1" name="round_location" value="{{ $round->id }}">
+                                                                SELECT
+                                                            </label>
                                                             @if(isset($round_childSeat) && $round_childSeat === true)
                                                                 <input type="hidden" name="round_child_seat" value="1">
                                                             @endif
