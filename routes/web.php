@@ -37,6 +37,36 @@ Route::as('front.')->middleware('localize')->group(function (){
     Route::get('appointment/', [AppointmentController::class, 'to'])->name('appointment.to');
     Route::get('appointment/payment/', [AppointmentController::class, 'payment'])->name('appointment.payment');
     Route::post('appointment/', [AppointmentController::class, 'store'])->name('appointment.store');
+    /*Route::get('sitemap', function (){
+        $sitemap = \Spatie\Sitemap\Sitemap::create()
+            ->add(\Spatie\Sitemap\Tags\Url::create(route('front.index')))
+            ->add(\Spatie\Sitemap\Tags\Url::create(route('front.search')))
+            ->add(\Spatie\Sitemap\Tags\Url::create(route('front.contact')))
+            ->add(\Spatie\Sitemap\Tags\Url::create(route('front.about')))
+            ->add(\Spatie\Sitemap\Tags\Url::create(route('front.private_service')))
+            ->add(\Spatie\Sitemap\Tags\Url::create(route('front.faq')));
+
+        \App\Models\Service::all()->each(function ($project) use ($sitemap){
+            $sitemap->add(\Spatie\Sitemap\Tags\Url::create(route('front.service', $project->id)));
+        });
+        if (is_file(public_path('sitemap.xml'))){
+            unlink(public_path('sitemap.xml'));
+        }
+        $sitemap->writeToFile(public_path('sitemap.xml'));
+
+        $sleeper = \Illuminate\Support\Facades\Http::get('https://www.google.com/ping?sitemap='.url('sitemap.xml'));
+        if ($sleeper->successful()) {
+            echo 'Google Arama Konsolu başarıyla bilgilendirildi.\n';
+        } else {
+            echo 'Google Arama Konsolunu bilgilendirme başarısız oldu.'. ' '. $sleeper->status().' \n';
+        }
+        sleep(1);
+        echo 'Anasayfaya yönlendiriliyorsunuz.';
+        sleep(5);
+        return redirect()->route('admin.home');
+
+
+    })->name('sitemap');*/
 });
 
 Auth::routes();
