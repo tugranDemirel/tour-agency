@@ -106,7 +106,7 @@
                 <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
                 <div class="main-menu">
                     <div id="header_menu">
-                        <img src="" width="160" height="34" alt="City tours">
+                        <img src="{{ $_setting->logo }}" width="160" height="34" alt="City tours">
                     </div>
                     <a class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
                     <ul>
