@@ -7,19 +7,31 @@
     @endisset
 @endsection
 @section('filter')
-
-    <div class="row">
-        <div class="col-lg-12" id="" >
-            <img class="img-fluid" src="{{ asset('images/prices.jpg') }}" alt="" style="
+   {{-- <img class="img-fluid" src="{{ asset('images/prices.jpg') }}" alt="" style="
             max-height: 700px;
             max-width: 100%;
             width: 100%;
             display: table;
             z-index: 99;
             position: relative;
-    ">
-        </div>
-    </div>
+    ">--}}
+   <div class="row mt-5 justify-content-center">
+       <div class="col-md-4 d-none d-sm-block d-sm-none d-md-block d-md-none d-lg-block">
+           <div class="thumbnail">
+                   <img src="{{ asset('images/prices_left.jpg') }}" alt="Lights" style="width:100%; z-index: 99!important;">
+           </div>
+       </div>
+       <div class="col-md-4">
+           <div class="thumbnail">
+                   <img src="{{ asset('images/prices_main.jpg') }}" alt="Lights" style="width:100%; z-index: 99!important;">
+           </div>
+       </div>
+       <div class="col-md-4 d-none d-sm-block d-sm-none d-md-block d-md-none d-lg-block">
+           <div class="thumbnail">
+                   <img src="{{ asset('images/prices_right.jpg') }}" alt="Lights" style="width:100%; z-index: 99!important;">
+           </div>
+       </div>
+   </div>
     @include('layouts.filter')
 @endsection
 @section('content')
