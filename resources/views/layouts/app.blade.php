@@ -104,35 +104,34 @@
             </div>
             <nav class="col-9">
                 <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
-                <div class="main-menu">
+                <div class="main-menu" style="color:black!important;">
                     <div id="header_menu">
-                        <img src="{{ $_setting->logo }}" width="160" height="34" alt="City tours">
+                        <img src="{{ $_setting->logo }}" width="160" height="34" alt="{{ $_setting->title }}">
                     </div>
-                    <a class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
+                    <a class="open_close" id="close_in" style="color:black!important;"><i class="icon_set_1_icon-77"></i></a>
                     <ul>
                         <li class="submenu">
-                            <a href="{{ route('front.index') }}" class="show-submenu">@lang('Home') </a>
+                            <a href="{{ route('front.index') }}" style="color:black!important;" class="show-submenu">@lang('Home') </a>
                         </li>
                         <li class="submenu">
-                            <a href="javascript:void(0);" class="show-submenu">@lang('Services') <i class="icon-down-open-mini"></i></a>
+                            <a href="javascript:void(0);" style="color:black!important;" class="show-submenu">@lang('Services') <i class="icon-down-open-mini"></i></a>
                             <ul>
                                 @foreach($_services as $service)
-                                <li><a href="{{ route('front.service', ['service' => $service]) }}">{{ $service->title }}</a></li>
+                                <li><a href="{{ route('front.service', ['service' => $service]) }}" style="color:black!important;">{{ $service->title }}</a></li>
                                 @endforeach
                             </ul>
                         </li>
-
                         <li class="submenu">
-                            <a href="{{ route('front.about') }}" class="show-submenu">@lang('About') </a>
+                            <a href="{{ route('front.about') }}" style="color:black!important;" class="show-submenu">@lang('About') </a>
                         </li>
                         <li class="submenu">
-                            <a href="{{ route('front.private_service') }}" class="show-submenu">@lang('Private Service') </a>
+                            <a href="{{ route('front.private_service') }}" style="color:black!important;" class="show-submenu">@lang('Private Service') </a>
                         </li>
                         <li class="submenu">
-                            <a href="{{ route('front.contact') }}" class="show-submenu">@lang('Contact') </a>
+                            <a href="{{ route('front.contact') }}" style="color:black!important;" class="show-submenu">@lang('Contact') </a>
                         </li>
                         <li class="submenu">
-                            <a href="{{ route('front.faq') }}" class="show-submenu">@lang('FAQ')</a>
+                            <a href="{{ route('front.faq') }}" style="color:black!important;" class="show-submenu">@lang('FAQ')</a>
                         </li>
                     </ul>
                 </div><!-- End main-menu -->
