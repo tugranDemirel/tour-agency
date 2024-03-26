@@ -133,6 +133,12 @@
                         <li class="submenu">
                             <a href="{{ route('front.faq') }}" style="color:black!important;" class="show-submenu">@lang('FAQ')</a>
                         </li>
+                        <li class="submenu">
+                            <a style="color:black!important;" class="show-submenu">KOŞ KOŞ TUR VE TURIZM</a>
+                        </li>
+                        <li class="submenu">
+                            <a style="color:black!important;" class="show-submenu">TÜRSAB NO:14217</a>
+                        </li>
                     </ul>
                 </div><!-- End main-menu -->
             </nav>
